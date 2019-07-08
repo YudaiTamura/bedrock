@@ -17,7 +17,12 @@
     }
   ],
   "keywords": [
-    "bedrock", "composer", "roots", "wordpress", "wp", "wp-config"
+    "bedrock",
+    "composer",
+    "roots",
+    "wordpress",
+    "wp",
+    "wp-config"
   ],
   "support": {
     "issues": "https://github.com/roots/bedrock/issues",
@@ -30,26 +35,76 @@
     {
       "type": "composer",
       "url": "https://wpackagist.org"
+    },
+    {
+      "type": "composer",
+      "url": "https://wp-languages.github.io"
+    },
+    {
+      "type": "composer",
+      "url": "https://pivvenit.github.io/acf-composer-bridge/composer/v2/"
+    },
+    {
+      "type": "vcs",
+      "url": "git@github.com:mdsimpson/contact-form-7-to-database-extension.git"
     }
   ],
   "require": {
     "php": ">=7.1",
     "composer/installers": "^1.4",
-    "vlucas/phpdotenv": "^3.4.0",
-    "oscarotero/env": "^1.2.0",
-    "roots/wordpress": "5.2.2",
+    "vlucas/phpdotenv": "^3.0.0",
+    "oscarotero/env": "^1.1.0",
+    "roots/wordpress": "*",
     "roots/wp-config": "1.0.0",
-    "roots/wp-password-bcrypt": "1.0.0"
+    "roots/wp-password-bcrypt": "1.0.0",
+    "wpackagist-plugin/advanced-custom-fields": "*",
+    "wpackagist-plugin/wordpress-seo": "*",
+    "wpackagist-plugin/contact-form-7": "*",
+    "mdsimpson/contact-form-7-to-database-extension": "*",
+    "wpackagist-plugin/google-captcha": "*",
+    "wpackagist-plugin/favicon-by-realfavicongenerator": "*",
+    "wpackagist-plugin/intuitive-custom-post-order": "*",
+    "wpackagist-plugin/custom-taxonomy-order-ne": "*",
+    "wpackagist-plugin/post-smtp": "*",
+    "wpackagist-plugin/search-and-replace": "*",
+    "wpackagist-plugin/duplicate-post": "*",
+    "wpackagist-plugin/wp-multibyte-patch": "*",
+    "wpackagist-plugin/google-analytics-for-wordpress": "*",
+    "wpackagist-plugin/better-wp-security": "*",
+    "wpackagist-plugin/lazysizes": "*",
+    "wpackagist-plugin/breadcrumb-navxt": "*",
+    "wpackagist-plugin/contact-form-7-add-confirm": "*",
+    "wpackagist-plugin/redirection": "*",
+    "koodimonni-language/core-ja": "*",
+    "koodimonni/composer-dropin-installer": "*",
+    "wpackagist-plugin/updraftplus": "*"
   },
   "require-dev": {
-    "squizlabs/php_codesniffer": "^3.4.2",
+    "squizlabs/php_codesniffer": "^3.0.2",
     "roave/security-advisories": "dev-master"
   },
   "extra": {
+    "dropin-paths": {
+      "web/app/languages/": [
+        "vendor:koodimonni-language"
+      ],
+      "web/app/languages/plugins/": [
+        "vendor:koodimonni-plugin-language"
+      ],
+      "web/app/languages/themes/": [
+        "vendor:koodimonni-theme-language"
+      ]
+    },
     "installer-paths": {
-      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
-      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
-      "web/app/themes/{$name}/": ["type:wordpress-theme"]
+      "web/app/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin"
+      ],
+      "web/app/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "web/app/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
     },
     "wordpress-install-dir": "web/wp"
   },
